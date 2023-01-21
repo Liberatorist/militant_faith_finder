@@ -1,0 +1,385 @@
+{
+   "query": {
+      "status": {
+         "option": "onlineleague"
+      },
+      "stats": [
+         {
+            "type": "and",
+            "filters": [
+               {
+                  "id": "explicit.stat_2585926696"
+               }
+            ]
+         },
+         {
+            "filters": [
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4763,
+                     "max": 4790
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4763,
+                     "max": 4790
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4763,
+                     "max": 4790
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4518,
+                     "max": 4541
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4518,
+                     "max": 4541
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4518,
+                     "max": 4541
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4826,
+                     "max": 4848
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4826,
+                     "max": 4848
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4826,
+                     "max": 4848
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 8102,
+                     "max": 8124
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 8102,
+                     "max": 8124
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 8102,
+                     "max": 8124
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 7372,
+                     "max": 7393
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 7372,
+                     "max": 7393
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 7372,
+                     "max": 7393
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4854,
+                     "max": 4874
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4854,
+                     "max": 4874
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4854,
+                     "max": 4874
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 7273,
+                     "max": 7292
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 7273,
+                     "max": 7292
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 7273,
+                     "max": 7292
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 8287,
+                     "max": 8306
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 8287,
+                     "max": 8306
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 8287,
+                     "max": 8306
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4404,
+                     "max": 4422
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4404,
+                     "max": 4422
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4404,
+                     "max": 4422
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 7222,
+                     "max": 7240
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 7222,
+                     "max": 7240
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 7222,
+                     "max": 7240
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 3000,
+                     "max": 3017
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 3000,
+                     "max": 3017
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 3000,
+                     "max": 3017
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4077,
+                     "max": 4093
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4077,
+                     "max": 4093
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4077,
+                     "max": 4093
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 7568,
+                     "max": 7584
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 7568,
+                     "max": 7584
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 7568,
+                     "max": 7584
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 6001,
+                     "max": 6016
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 6001,
+                     "max": 6016
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 6001,
+                     "max": 6016
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_avarius",
+                  "value": {
+                     "min": 4926,
+                     "max": 4940
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_dominus",
+                  "value": {
+                     "min": 4926,
+                     "max": 4940
+                  },
+                  "disabled": false
+               },
+               {
+                  "id": "explicit.pseudo_timeless_jewel_maxarius",
+                  "value": {
+                     "min": 4926,
+                     "max": 4940
+                  },
+                  "disabled": false
+               }
+            ],
+            "type": "not"
+         }
+      ]
+   },
+   "sort": {
+      "price": "asc"
+   }
+}
