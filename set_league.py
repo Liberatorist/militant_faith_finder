@@ -5,6 +5,7 @@ def set_league():
     response = requests.get("https://api.pathofexile.com/leagues", headers={'user-agent': 'liberatorist@gmail.com'})
     for league in response.json():
         if league['rules'] == [] and "This is the default Path of Exile league" in league["description"]:
+            print(f'Set current league as "{league["id"]}"')
             with open("current_league.txt", "w") as file:
                 file.write(league["id"])
 
