@@ -1,5 +1,5 @@
 datetime
 requests
-Flask
+Flask[async]
 gunicorn
 Werkzeug
