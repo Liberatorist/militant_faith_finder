@@ -14,7 +14,7 @@ jobs:
           python-version: '3.10'
       - uses: actions/checkout@v3
       - name: Set league
-        run: pip3 install --quiet requests && python3 ./set_league.py
+        run: pip3 install --quiet requests && python3 set_league.py
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
