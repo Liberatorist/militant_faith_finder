@@ -1,0 +1,21 @@
+name: Fly Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Set league
+        run: pip3 install --quiet requests && python3 set_league.py
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

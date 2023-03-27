@@ -12,6 +12,8 @@ current_url = None
 last_request = datetime.utcnow()
 with open("data/useful_seeds") as file:
     useful_seeds = json.loads(file.read())
+with open("current_league.txt") as file:
+    current_league = file.read()
 
 
 @app.route('/')
@@ -33,7 +35,7 @@ def grab_jewels():
     with open("data/initial_post_query.json", "r") as file:
         json_data = json.loads(file.read())
 
-    response = requests.post('https://www.pathofexile.com/api/trade/search/Sanctum', headers=headers, json=json_data)
+    response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data)
     params = {'query': response.json()["id"]}
     results = response.json()["result"]
     count = 0
@@ -93,8 +95,8 @@ def create_trade_url(non_bricked_jewels):
             'price': 'asc',
         },
     }
-    response = requests.post('https://www.pathofexile.com/api/trade/search/Sanctum', headers=headers, json=json_data)
-    return f"https://www.pathofexile.com/trade/search/Sanctum/{response.json()['id']}"
+    response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data)
+    return f"https://www.pathofexile.com/trade/search/{current_league}/{response.json()['id']}"
 
 
 current_states = ""
