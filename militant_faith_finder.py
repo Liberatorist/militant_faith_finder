@@ -3,26 +3,34 @@ import re
 import time
 from datetime import datetime, timedelta
 
-from flask import Flask, redirect
+from flask import Flask, redirect, render_template
 import requests
 
 app = Flask(__name__)
 
 current_url = None
 last_request = datetime.utcnow()
-with open("data/useful_seeds") as file:
+with open("data/useful_seeds", "r") as file:
     useful_seeds = json.loads(file.read())
-with open("current_league.txt") as file:
-    current_league = file.read()
 
+try:
+    with open("current_league.txt", "r") as file:
+        current_league = file.read()
+except FileNotFoundError:
+    current_league = None
 
 @app.route('/')
 def endpoint():
     global current_url, last_request
-    if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
-        current_url = grab_jewels()
-        last_request = datetime.utcnow()
-    return redirect(current_url)
+    if current_league is None:
+        return render_template("404_page.html")
+    try:
+        if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
+            current_url = grab_jewels()
+            last_request = datetime.utcnow()
+        return redirect(current_url)
+    except ConnectionError:
+        return render_template("404_page.html")
 
 
 headers = {
@@ -36,6 +44,8 @@ def grab_jewels():
         json_data = json.loads(file.read())
 
     response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data)
+    if response.status_code >= 400:
+        raise ConnectionError
     params = {'query': response.json()["id"]}
     results = response.json()["result"]
     count = 0
@@ -122,6 +132,8 @@ def fetch_trade(url, params):
         params=params,
         headers=headers,
     )
+    if response.status_code >= 400:
+        raise ConnectionError
     policies, current_states = response.headers["X-Rate-Limit-Ip"], response.headers["X-Rate-Limit-Ip-State"]
     return response
 
