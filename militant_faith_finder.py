@@ -23,14 +23,14 @@ except FileNotFoundError:
 def endpoint():
     global current_url, last_request
     if current_league is None:
-        return render_template("404_page.html")
+        return render_template("404_page.html"), 404
     try:
         if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
             current_url = grab_jewels()
             last_request = datetime.utcnow()
         return redirect(current_url)
     except ConnectionError:
-        return render_template("404_page.html")
+        return render_template("404_page.html"), 404
 
 
 headers = {
