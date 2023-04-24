@@ -1,8 +1,9 @@
-# fly.toml file generated for militant-faith-finder on 2023-01-21T12:24:01+01:00
+# fly.toml file generated for militant-faith-finder on 2023-04-24T04:17:45+02:00
 
 app = "militant-faith-finder"
 kill_signal = "SIGINT"
 kill_timeout = 5
+primary_region = "bos"
 processes = []
 
 [build]
@@ -12,7 +13,6 @@ processes = []
   PORT = "8080"
 
 [experimental]
-  allowed_public_ports = []
   auto_rollback = true
 
 [[services]]

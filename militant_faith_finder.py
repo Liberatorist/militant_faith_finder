@@ -1,9 +1,10 @@
 import json
+import os
 import re
 import time
 from datetime import datetime, timedelta
 
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect
 import requests
 
 app = Flask(__name__)
@@ -18,7 +19,7 @@ with open("data/useful_seeds", "r") as file:
 #         current_league = file.read()
 # except FileNotFoundError:
 #     current_league = None
-current_league = "Crucible"
+current_league = os.environ.get("CURRENT_LEAGUE", "crucible")
 
 @app.route('/')
 def endpoint():
@@ -38,6 +39,10 @@ headers = {
     'content-type': 'application/json',
     'user-agent': 'liberatorist@gmail.com',
 }
+cookies = {}
+if os.environ.get("SESSION_ID"):
+    cookies['POESESSID'] = os.environ.get("SESSION_ID")
+
 
 @app.errorhandler(500)
 def handle_exception(e):
@@ -58,7 +63,7 @@ def grab_jewels():
     with open("data/initial_post_query.json", "r") as file:
         json_data = json.loads(file.read())
 
-    response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data)
+    response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data, cookies=cookies)
     if response.status_code >= 400:
         raise ConnectionError(response.text)
     params = {'query': response.json()["id"]}
@@ -120,7 +125,7 @@ def create_trade_url(non_bricked_jewels):
             'price': 'asc',
         },
     }
-    response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data)
+    response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data, cookies=cookies)
     return f"https://www.pathofexile.com/trade/search/{current_league}/{response.json()['id']}"
 
 
