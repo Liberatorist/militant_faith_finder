@@ -4,7 +4,7 @@ import re
 import time
 from datetime import datetime, timedelta
 
-from flask import Flask, redirect
+from flask import Flask, redirect, render_template
 import requests
 
 app = Flask(__name__)
@@ -23,14 +23,15 @@ current_league = os.environ.get("CURRENT_LEAGUE", "crucible")
 
 @app.route('/')
 def endpoint():
-    global current_url, last_request
+    return render_template("503_maintenance.html"), 504
+    # global current_url, last_request
     # if current_league is None:
     #     return render_template("404_page.html"), 404
     # try:
-    if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
-        current_url = grab_jewels()
-        last_request = datetime.utcnow()
-    return redirect(current_url)
+        # if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
+        #     current_url = grab_jewels()
+        #     last_request = datetime.utcnow()
+        # return redirect(current_url)
     # except ConnectionError:
     #     return render_template("404_page.html"), 404
 
