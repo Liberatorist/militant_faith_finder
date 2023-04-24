@@ -60,7 +60,7 @@ def grab_jewels():
 
     response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data)
     if response.status_code >= 400:
-        raise ConnectionError
+        raise ConnectionError(response.text)
     params = {'query': response.json()["id"]}
     results = response.json()["result"]
     count = 0
