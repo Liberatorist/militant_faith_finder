@@ -37,8 +37,23 @@ def endpoint():
 
 headers = {
     'content-type': 'application/json',
-    'user-agent': 'liberatorist@gmail.com',
+    'authority': 'www.pathofexile.com',
+    'accept': '*/*',
+    'accept-language': 'en-US,en;q=0.9,de;q=0.8,fr;q=0.7',
+    'content-type': 'application/json',
+    'dnt': '1',
+    'origin': 'https://www.pathofexile.com',
+    'referer': 'https://www.pathofexile.com/trade/exchange/Crucible',
+    'sec-ch-ua': '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-origin',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+    'x-requested-with': 'XMLHttpRequest',
 }
+
 cookies = {}
 if os.environ.get("SESSION_ID"):
     cookies['POESESSID'] = os.environ.get("SESSION_ID")
@@ -65,7 +80,7 @@ def grab_jewels():
 
     response = requests.post(f'https://www.pathofexile.com/api/trade/search/{current_league}', headers=headers, json=json_data, cookies=cookies)
     if response.status_code >= 400:
-        raise ConnectionError(response.text)
+        raise ConnectionError(json.dumps(response.headers) + response.text)
     params = {'query': response.json()["id"]}
     results = response.json()["result"]
     count = 0
