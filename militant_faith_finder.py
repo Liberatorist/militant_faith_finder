@@ -13,24 +13,25 @@ last_request = datetime.utcnow()
 with open("data/useful_seeds", "r") as file:
     useful_seeds = json.loads(file.read())
 
-try:
-    with open("current_league.txt", "r") as file:
-        current_league = file.read()
-except FileNotFoundError:
-    current_league = None
+# try:
+#     with open("current_league.txt", "r") as file:
+#         current_league = file.read()
+# except FileNotFoundError:
+#     current_league = None
+current_league = "Crucible"
 
 @app.route('/')
 def endpoint():
     global current_url, last_request
-    if current_league is None:
-        return render_template("404_page.html"), 404
-    try:
-        if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
-            current_url = grab_jewels()
-            last_request = datetime.utcnow()
-        return redirect(current_url)
-    except ConnectionError:
-        return render_template("404_page.html"), 404
+    # if current_league is None:
+    #     return render_template("404_page.html"), 404
+    # try:
+    if current_url is None or datetime.utcnow() - last_request >= timedelta(minutes=1):
+        current_url = grab_jewels()
+        last_request = datetime.utcnow()
+    return redirect(current_url)
+    # except ConnectionError:
+    #     return render_template("404_page.html"), 404
 
 
 headers = {
