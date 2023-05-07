@@ -223,7 +223,7 @@ def crawl_trade(mods, num_splits):
 def grab_jewels():
     generic_link = crawl_trade(['1% increased effect of Non-Curse Auras per 10 Devotion'], 3)
     mana_link = crawl_trade(['1% increased effect of Non-Curse Auras per 10 Devotion', '1% reduced Mana Cost of Skills per 10 Devotion'], 3)
-    with open('data/trade_links.json', 'w') as file:
+    with open('static/trade_links.json', 'w') as file:
         file.write(json.dumps({'generic_link': generic_link, 'mana_link': mana_link, 'time_since_last_update': str(datetime.datetime.utcnow())}))
 
 

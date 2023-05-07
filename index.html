@@ -3,6 +3,7 @@
 <title>Militant Faith Finder</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
 <link rel="icon" href="/static/Militant_Faith_inventory_icon.png">
+<script type="module" src="static/src.js"></script>
 <style>
 body {
   padding: 25px;
@@ -25,9 +26,9 @@ body {
 <!-- <h1>404</h1> -->
 <p> Trade links for Militant Faith Timeless Jewels that would brick the usual aurabot's notable passives.</p>
 <p> i.e. "Foresight", "Thrill Killer", "Destructive Apparatus", "Leadership", "Harrier" or "Reflexes"</p>
-<p><a href="{{ generic_link }}" target="_blank">Militant Faiths with 1% Aura Effect per 10 Devotion</a></p>
-<p><a href="{{ mana_link }}" target="_blank">Militant Faiths with 1% Aura Effect and 1% reduced Mana Cost per 10 Devotion</a></p>
-<p>Time since last update of trade links: {{ time_since_last_update }}</p>
+<p><a id=generic_link href="" target="_blank">Militant Faiths with 1% Aura Effect per 10 Devotion</a></p>
+<p><a id=mana_link href="" target="_blank">Militant Faiths with 1% Aura Effect and 1% reduced Mana Cost per 10 Devotion</a></p>
+<p>Time since last update of trade links: <a id="last_update"></a></p>
 </div>
 </body>
 </html>

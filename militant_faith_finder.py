@@ -8,30 +8,10 @@ from trade_crawler import initialize_scheduler
 template_dir = os.getcwd()
 app = Flask(__name__, template_folder=template_dir)
 
-with open('data/useful_seeds', 'r') as file:
-    useful_seeds = json.loads(file.read())
-    
-def get_human_readable_time_diff(time_string):
-    diff = (datetime.utcnow() - datetime.strptime(time_string, '%Y-%m-%d %H:%M:%S.%f')).seconds
-    if (seconds := diff) < 60:
-        return f"{seconds} second{'s' if seconds > 1 else ''} ago"
-    elif (minutes := round(diff / 60)) < 60:
-        return f"{minutes} minute{'s' if minutes > 1 else ''} ago"
-    elif (hours := round(minutes / 60)) < 24:
-        return f"{hours} hour{'s' if hours > 1 else ''} ago"
-    days = round(hours / 24)
-    return f"{days} day{'s' if round(days) > 1 else ''} ago"
-
-
 
 @app.route('/')
 def endpoint():
-    with open('data/trade_links.json', 'r') as file:
-        data = json.loads(file.read())
-    return render_template('index.html', 
-                           generic_link = data['generic_link'], 
-                           mana_link = data['mana_link'], 
-                           time_since_last_update=get_human_readable_time_diff(data['time_since_last_update']))
+    return render_template('index.html')
 
 
 @app.errorhandler(500)
