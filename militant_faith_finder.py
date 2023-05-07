@@ -8,9 +8,16 @@ from trade_crawler import initialize_scheduler
 template_dir = os.getcwd()
 app = Flask(__name__, template_folder=template_dir)
 
-
+calls = 0
 @app.route('/')
 def endpoint():
+    global calls
+    calls += 1
+    with open("static/trade_links.json", "r") as file:
+        data = json.loads(file.read())
+    data["calls"] = calls
+    with open("static/trade_links.json", "w") as file:
+        file.write(json.dumps(data))
     return render_template('index.html')
 
 

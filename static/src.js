@@ -11,3 +11,4 @@ const diff = formatter.format(Math.round((last_update - currentDate) / 60000), '
 document.getElementById('generic_link').href = data["generic_link"];
 document.getElementById('mana_link').href = data["mana_link"];
 document.getElementById('last_update').innerHTML = diff;
+document.getElementById('counter').innerHTML = data["calls"];
