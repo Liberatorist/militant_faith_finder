@@ -17,7 +17,7 @@ current_states_get = ''
 current_states_post = ''
 policies_get = '12:4:60,16:12:60'
 policies_post = '8:10:60,15:60:120,60:300:1800'
-current_league = ''
+current_league = "Crucible"
 
 
 with open('data/mappings.json', 'r') as file:
@@ -221,7 +221,6 @@ def crawl_trade(mods, num_splits):
 
 
 def grab_jewels():
-    set_league()
     generic_link = crawl_trade(['1% increased effect of Non-Curse Auras per 10 Devotion'], 3)
     mana_link = crawl_trade(['1% increased effect of Non-Curse Auras per 10 Devotion', '1% reduced Mana Cost of Skills per 10 Devotion'], 3)
     with open('data/trade_links.json', 'w') as file:
@@ -230,7 +229,7 @@ def grab_jewels():
 
 def initialize_scheduler():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(func=grab_jewels, trigger='interval', minutes=5)
+    scheduler.add_job(func=grab_jewels, trigger='interval', minutes=1)
     scheduler.start()
     atexit.register(lambda: scheduler.shutdown())
 

@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-  # schedule:
-  #   - cron:  '0 0 * * *'
 jobs:
   deploy:
     name: Deploy app
@@ -15,12 +13,8 @@ jobs:
         with:
           python-version: '3.10'
       - uses: actions/checkout@v3
-      - name: Set league
-        run: pip3 install --quiet requests && python3 set_league.py
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
           FLASK_DEBUG: True
-          SESSION_ID: ${{ secrets.SESSION_ID }}
-          CURRENT_LEAGUE: ${{ env.CURRENT_LEAGUE }}

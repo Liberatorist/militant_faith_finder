@@ -1,11 +1,12 @@
 import json
 from datetime import datetime
+import os
 
 from flask import Flask, render_template
 from trade_crawler import initialize_scheduler
 
-app = Flask(__name__)
-
+template_dir = os.getcwd()
+app = Flask(__name__, template_folder=template_dir)
 
 with open('data/useful_seeds', 'r') as file:
     useful_seeds = json.loads(file.read())

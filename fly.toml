@@ -1,13 +1,16 @@
-# fly.toml file generated for militant-faith-finder on 2023-04-24T04:17:45+02:00
+# fly.toml app configuration file generated for find-militant-faith on 2023-05-07T18:48:44+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "militant-faith-finder"
+app = "find-militant-faith"
 kill_signal = "SIGINT"
 kill_timeout = 5
-primary_region = "bos"
+primary_region = "ams"
 processes = []
 
 [build]
-  builder = "paketobuildpacks/builder:base"
+  builder = "paketobuildpacks/builder:full"
 
 [env]
   PORT = "8080"
@@ -40,3 +43,7 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+  [[statics]]
+    guest_path = "/usr/src/app/static"
+    url_prefix = "/static/"
