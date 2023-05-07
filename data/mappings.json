@@ -1,0 +1,46 @@
+{
+  "templar2num": {
+    "Avarius": 0,
+    "Maxarius": 1,
+    "Dominus": 2
+  },
+  "num2templarmod": [
+    "explicit.pseudo_timeless_jewel_avarius",
+    "explicit.pseudo_timeless_jewel_maxarius",
+    "explicit.pseudo_timeless_jewel_dominus"
+  ],
+  "num2explicitmod": [
+    "explicit.stat_2697019412",
+    "explicit.stat_730530528",
+    "explicit.stat_2042813020",
+    "explicit.stat_3293275880",
+    "explicit.stat_1910205563",
+    "explicit.stat_2830135449",
+    "explicit.stat_4235333770",
+    "explicit.stat_1810368194",
+    "explicit.stat_3103189267",
+    "explicit.stat_1724614884",
+    "explicit.stat_2803981661",
+    "explicit.stat_2585926696",
+    "explicit.stat_2566390555",
+    "explicit.stat_3808469650",
+    "explicit.stat_970844066"
+  ],
+  "modtranslation2num": {
+    "4% increased Brand Damage per 10 Devotion": 0,
+    "4% reduced Elemental Ailment Duration on you per 10 Devotion": 1,
+    "Regenerate 0.6 Mana per Second per 10 Devotion": 2,
+    "1% reduced Mana Cost of Skills per 10 Devotion": 3,
+    "+2% to all Elemental Resistances per 10 Devotion": 4,
+    "Minions have +60 to Accuracy Rating per 10 Devotion": 5,
+    "4% reduced Duration of Curses on you per 10 Devotion": 6,
+    "3% increased Effect of non-Damaging Ailments on Enemies per 10 Devotion": 7,
+    "4% increased Elemental Damage per 10 Devotion": 8,
+    "4% increased Area Damage per 10 Devotion": 9,
+    "3% increased Defences from Equipped Shield per 10 Devotion": 10,
+    "1% increased effect of Non-Curse Auras per 10 Devotion": 11,
+    "4% increased Totem Damage per 10 Devotion": 12,
+    "1% increased Minion Attack and Cast Speed per 10 Devotion": 13,
+    "Channelling Skills deal 4% increased Damage per 10 Devotion": 14
+  }
+}
